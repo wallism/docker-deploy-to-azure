@@ -1,0 +1,6 @@
+@DockerInAzure_HostAddress = http://localhost:5276
+
+GET {{DockerInAzure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
