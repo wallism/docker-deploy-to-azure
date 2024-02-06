@@ -7,7 +7,7 @@ on:
     branches: 
       [ master ]
     paths:
-    - 'DockerInAzure/**'
+    - '**'
     - '.github/workflows/apiwithdocker-capp-AutoDeployTrigger-ed172ecb-f848-48f8-8b19-a309e6bbf0c0.yml'
 
   # Allow manual trigger 
