@@ -29,14 +29,14 @@ jobs:
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
         with:
-          appSourcePath: ${{ github.workspace }} 
+          appSourcePath: ${{ github.workspace }}/src
           registryUrl: sprintdeploylearnrepeatcr1.azurecr.io
           registryUsername: ${{ secrets.DOCKERINAZURECAPP07_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.DOCKERINAZURECAPP07_REGISTRY_PASSWORD }}
           containerAppName: dockerinazure-capp-07
           resourceGroup: CourseTempOneRG
           imageToBuild: sprintdeploylearnrepeatcr1.azurecr.io/dockerinazure-capp-07:${{ github.sha }}
-          
+          dockerfilePath: DockerInAzure/Dockerfile
             
 
      
