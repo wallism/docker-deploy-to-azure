@@ -25,7 +25,13 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.DOCKERINAZURECAPP082_AZURE_CREDENTIALS }}
-
+          
+      - name: Set image tag
+        id: set-tag
+        run: |
+          TAG=$(date +"%Y%m%d")-$(echo ${{ github.sha }} | cut -c1-8)
+          echo "::set-output name=imageTag::$TAG"
+        
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
         with:
@@ -35,7 +41,7 @@ jobs:
           registryPassword: ${{ secrets.DOCKERINAZURECAPP082_REGISTRY_PASSWORD }}
           containerAppName: dockerinazure-capp-08-2
           resourceGroup: CourseTempOneRG
-          imageToBuild: sprintdeploylearnrepeatcr1.azurecr.io/dockerinazure-capp-08-2:${{ github.sha }}
+          imageToBuild: sprintdeploylearnrepeatcr1.azurecr.io/dockerinazure-capp-08-2:${{ steps.build.outputs.imageTag }}
           
             
 
