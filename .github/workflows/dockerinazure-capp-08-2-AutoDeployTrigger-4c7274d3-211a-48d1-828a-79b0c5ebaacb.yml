@@ -41,7 +41,7 @@ jobs:
           registryPassword: ${{ secrets.DOCKERINAZURECAPP082_REGISTRY_PASSWORD }}
           containerAppName: dockerinazure-capp-08-2
           resourceGroup: CourseTempOneRG
-          imageToBuild: sprintdeploylearnrepeatcr1.azurecr.io/dockerinazure-capp-08-2:${{ steps.build.outputs.imageTag }}
+          imageToBuild: sprintdeploylearnrepeatcr1.azurecr.io/dockerinazure-capp-08-2:${{ steps.set-tag.outputs.imageTag }}
           
             
 
