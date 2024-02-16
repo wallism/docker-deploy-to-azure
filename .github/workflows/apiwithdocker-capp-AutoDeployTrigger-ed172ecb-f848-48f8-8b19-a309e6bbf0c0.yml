@@ -31,8 +31,6 @@ jobs:
         with:
           appSourcePath: ${{ github.workspace }}/src 
           registryUrl: sprintdeploylearnrepeatcr1.azurecr.io
-          registryUsername: ${{ secrets.APIWITHDOCKERCAPP_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.APIWITHDOCKERCAPP_REGISTRY_PASSWORD }}
           containerAppName: apiwithdocker-capp
           resourceGroup: sdlr-docker-in-azure
           imageToBuild: sprintdeploylearnrepeatcr1.azurecr.io/dockerinazure:${{ github.sha }}
