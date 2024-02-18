@@ -41,7 +41,7 @@ jobs:
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }} 
-          registryUrl: hub.docker.com/repository/docker/wallism
+          registryUrl: registry.hub.docker.com/wallism/sdlr-capp-dockerinazure-app-yml
           registryUsername: wallism
           registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
           containerAppName: dockerinazure-app-yml
