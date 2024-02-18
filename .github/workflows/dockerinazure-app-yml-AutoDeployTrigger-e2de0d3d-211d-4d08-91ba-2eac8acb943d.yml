@@ -45,6 +45,7 @@ jobs:
           registryUsername: wallism
           registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
           containerAppName: dockerinazure-app-yml
+          imageToBuild: dockerfile:${{ github.sha }}
           resourceGroup: CourseTempOneRG
           _buildArgumentsKey_: |
             _buildArgumentsValues_
